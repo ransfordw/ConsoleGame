@@ -50,5 +50,28 @@ namespace MeanGirls
                 $"\t Friends: {character.NumberOfFriends}\n" +
                 $"\t Popularity: {character.PopularityPoints}\n\n");
         }
+        public void FirstAction(string response)
+        {
+            if (response == "1")
+            {
+                 bool makeup = true;
+                GetMakeupStatus(makeup);
+                Console.WriteLine("First impressions are everything in a new school. Better put on some makeup.");
+            }
+            else if (response == "2")
+            {
+                Console.WriteLine("Good idea, you're already late, best not to be any later.");
+            }
+            else if (response == "3")
+            {
+                Console.WriteLine("It'll be better to start fresh tommorrow on time.");
+            }
+            else
+            {
+                Console.WriteLine("You have chosen poorly.");
+                Console.WriteLine("Game Over");
+            }
+
+        }
     }
 }

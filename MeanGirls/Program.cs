@@ -32,7 +32,20 @@ namespace MeanGirls
             Hero hero = new Hero(characterName, characterGrade, makeup, nails, popularity, friends);
             Console.WriteLine($"Congratulations! You have made your character!\n\n");
             charRepo.PrintCharacterDetails(hero);
-            Console.WriteLine($"Your goal: Survive Middle School. Good Luck!");
+            Console.WriteLine($"Your goal: Survive your first day of Middle School. Good Luck!");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine($"Great. Just Great. It's your first day at a new school and you're late! \n\n" +
+                $"What do you want to do?\n" +
+                $"\t 1. Run to the bathroom to put on some makeup\n" +
+                $"\t 2. Go straight to class\n" +
+                $"\t 3. Turn around and go home");
+            var response = Console.ReadLine();
+            Console.Clear();
+            charRepo.FirstAction(response);
+
+
 
             Console.ReadLine();
         }
