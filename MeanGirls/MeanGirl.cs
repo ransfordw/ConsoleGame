@@ -8,10 +8,8 @@ namespace MeanGirls
 {
     public class MeanGirl
     {
-        public enum NailLength { Short = 1, Medium, Long, ScaryHagLong }
-
         public MeanGirl() {}
-        public MeanGirl( string name, int grade, bool makeup, NailLength nailLength, int popularityPoints, int friends)
+        public MeanGirl( string name, int grade, bool makeup, int nailLength, int popularityPoints, int friends)
         {
             OpponentName = name;
             OpponentGrade = grade;
@@ -24,7 +22,7 @@ namespace MeanGirls
         public string OpponentName { get; set; }
         public int OpponentGrade { get; set; }
         public bool HasMakeup { get; set; }
-        public NailLength OpponentClaws { get; set; }
+        public int OpponentClaws { get; set; }
         public int PopularityPoints { get; set; }
         public int NumberOfFriends { get; set; }
 
