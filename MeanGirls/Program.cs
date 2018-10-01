@@ -103,7 +103,7 @@ namespace MeanGirls
                     Console.ReadLine();
                     Console.Clear();
 
-                    Console.WriteLine($"After lunch you make you way back to class. );
+                    Console.WriteLine($"After lunch you make you way back to class. ");
 
                     endGame = true;
                 }
