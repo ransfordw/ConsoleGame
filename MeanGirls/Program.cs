@@ -20,6 +20,7 @@ namespace MeanGirls
             var friends = 0;
             var popularity = 0;
             bool endGame = false;
+            MeanGirl boss = new MeanGirl("Bertha", 8, true, 3, 10, 0);
 
             //synth.Speak("You find yourself transported back in time, to a terrible dark place... Middle School ");
             Console.WriteLine($"You find yourself transported back in time, to a terrible dark place... Middle School \n\n\n " +
@@ -103,7 +104,21 @@ namespace MeanGirls
                     Console.ReadLine();
                     Console.Clear();
 
-                    Console.WriteLine($"After lunch you make you way back to class. ");
+                    Console.WriteLine($"After lunch you make you way back to class./n/n" +
+                        $"Class goes on fine and you think you've survied the day. But something doesn't feel right. Suddenly a tap on you're shoulder.\n\n" +
+                        $"\"Hello {hero.CharacterName}. It's been a long time...\"" +
+                        $"\nYou turn around to see {boss.OpponentName}! You're nemisis from your old school! She must have moved this summer too!");
+                    Console.ReadLine();
+                    Console.Clear();
+
+                    Console.WriteLine($"What do you do?\n\n" +
+                        $"\t1. { boss.OpponentName}, \"Listen, can we please forget last year and start off fresh?\"\n" +
+                        $"\t2. Pretend you don't recognize her. \"Who are you?\"\n" +
+                        $"\t3. \"{boss.OpponentName}, what are you doing here\"\n" +
+                        $"\t4. You run away in terror. You don't want to deal with {boss.OpponentName} again.\n" +
+                        $"\t5. You decide to walk away. She's not worth it.");
+                    var responseFive = Int32.Parse(Console.ReadLine());
+                    charRepo.FifthAction(responseFive);
 
                     endGame = true;
                 }

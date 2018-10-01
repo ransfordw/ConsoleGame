@@ -120,7 +120,7 @@ namespace MeanGirls
         }
         public void ThirdAction(int responseThree)
         {
-                MeanGirl haelga = new MeanGirl("Haelga", 1, true, 3, 60, 3);
+            MeanGirl haelga = new MeanGirl("Haelga", 1, true, 3, 60, 3);
             switch (responseThree)
             {
                 case 1: //make a friend
@@ -142,7 +142,7 @@ namespace MeanGirls
                     else
                     {
                         Console.WriteLine($"\"Yeah keep walking. No one wants to see that outfit.\"");
-                    hero.PopularityPoints -= 5;
+                        hero.PopularityPoints -= 5;
                     };
                     break;
                 case 3: //catfight
@@ -160,7 +160,7 @@ namespace MeanGirls
                         Console.WriteLine("You won the fight!");
                         hero.PopularityPoints -= 10;
                     }
-                    break;     
+                    break;
                 case 4: //plus pop points
                     Console.WriteLine($"\"Ohhhh {haelga.OpponentName}, she told you! You go girl.\"\n" +
                         $"You feel you face flush with a little more confidence.");
@@ -177,25 +177,61 @@ namespace MeanGirls
         {
             switch (responseFour)
             {
-            case 1:
+                case 1:
                     Console.WriteLine($"\"Oh, we understand. The school anticipates students forgetting their lunch on the first day. Just let one of the lunch ladies knw.\"");
-                break;
-            case 2:
+                    break;
+                case 2:
                     Console.WriteLine($"Sure! I packed an extra lunch hoping to make a friend.\n" +
                         $"\n\tYou make a friend!");
                     hero.NumberOfFriends += 1;
                     hero.PopularityPoints += 5;
-                break;
-            case 3:
-                    Console.WriteLine("You hide in the bathroom.Rumors start to spread about you...");
+                    break;
+                case 3:
+                    Console.WriteLine("You hide in the bathroom. You decide to put on fake nails but rumors start to spread about you...");
                     hero.PopularityPoints -= 5;
-                break;
-            default:
-                break;
+                    hero.CharacterClaws += 1;
+                    break;
+                default:
+                    break;
             }
         }
         public void FifthAction(int responseFive)
         {
+            MeanGirl boss = new MeanGirl("Bertha", 8, true, 3, 10, 0);
+            switch (responseFive)
+            {
+                case 1:
+                    Console.WriteLine("She agrees. New year new me.");
+                    hero.NumberOfFriends += 1;
+                    hero.PopularityPoints += 10;
+                    break;
+                case 2:
+                    Console.WriteLine("$\"Oh like you don't know me!!\" She slaps you accross the face.");
+                    if (hero.CharacterClaws >= boss.OpponentClaws)
+                    { Console.WriteLine("Her slap does no harm, you react with an intense fury and scratch the makeup right off her face!");
+                        hero.PopularityPoints += 10;
+                        boss.HasMakeup = false;
+                    }else if (hero.CharacterClaws < boss.OpponentClaws)
+                    {
+                        Console.WriteLine("She scratches your face. The pain is too familiar and brings memories of that horrible school you left behind.");
+                        hero.PopularityPoints -= 30;
+                        break;
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("She tells you that her dad's job got transfered. She's sorry for the past and wants to start fresh.");
+                    hero.PopularityPoints += 5;
+                    break;
+                case 4:
+                    Console.WriteLine("You give up. Middle School is not for you. You try and come up with a way to be homeschooled.");
+                    hero.PopularityPoints -= 30;
+                    break;
+                case 5:
+                    Console.WriteLine("Good call, you've almost made it through the day. Don't want to start anything.");
+                    break;
+                default:
+                    break;
+            }
 
         }
     }
